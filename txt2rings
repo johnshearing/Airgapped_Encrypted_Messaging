@@ -1,0 +1,24 @@
+#/usr/bin/bash
+
+# This script will import a public or private key from a text file into a GPG keyring.
+
+clear; 
+
+# Prompt user to select a key text file to import. 
+fileToImport=$(zenity \
+--title="Select a key text file to import" \
+--file-selection \
+--filename="/home/pi/" \
+2>/dev/null); 
+
+# If the user cancels the prompt action then exit this script.
+if [ $? == 1 ]; then exit; fi
+
+clear;
+
+gpg --import $fileToImport;
+
+clear;
+
+echo "Run list-keys from the menu to check that a public key has been imported.";
+echo "Run list-secret-keys from the menu to check that a private key has been imported.";

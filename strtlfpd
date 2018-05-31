@@ -1,0 +1,21 @@
+#/usr/bin/bash
+
+# This script starts the leafpad text editor.
+
+clear;
+
+# Prompt user to select a file to open. 
+fileToOpen=$(zenity \
+--title="Select a text file to open" \
+--file-selection \
+--filename="/home/pi/" \
+2>/dev/null); 
+
+# If the user cancels the prompt action then exit this script.
+#if [ $? == 1 ]; then exit; fi
+
+clear;
+
+leafpad $fileToOpen;
+
+clear;

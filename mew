@@ -1,0 +1,5 @@
+#/usr/bin/bash
+
+# This script starts MyEtherWallet.
+
+chromium-browser --app=URL file:///home/pi/MEW/index.html#offline-transaction 2>/dev/null

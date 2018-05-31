@@ -1,0 +1,33 @@
+#/usr/bin/bash
+
+clear; 
+
+# Prompt user to select a file to parade. 
+fileToParade=$(zenity \
+--title="Select a text file to display as a qr-code parade" \
+--file-selection \
+--filename="/home/pi/" \
+2>/dev/null); 
+
+# If the user cancels the prompt action then exit this script.
+if [ $? == 1 ]; then exit; fi
+
+clear;
+
+# Prompt user to specify the amount of time that each qr-code will be displayed.
+timeToDisplay=$(zenity \
+--entry \
+--title="Specify The Amount Of Time To Display Each QR-Code" \
+--entry-text=".3" \
+--width 700 \
+2>/dev/null); 
+
+# If the user cancels the prompt action then exit this script.
+if [ $? == 1 ]; then exit; fi
+
+clear;
+
+base64 $fileToParade | while read r; do echo $r | qrencode -t ANSIUTF8; sleep $timeToDisplay; done
+
+clear;
+

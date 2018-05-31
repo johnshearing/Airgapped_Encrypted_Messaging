@@ -1,0 +1,9 @@
+#/usr/bin/bash
+
+# This script starts the file manager.
+
+cd ~;
+
+pcmanfm;
+
+clear;

@@ -1,0 +1,52 @@
+#/usr/bin/bash
+
+# This script will export your public key to a text file so you can share it with others.
+
+clear;
+
+# Prompt user for the directory where the exported public key text file will be written to.
+outputDirectory=$(zenity \
+--title="Select the directory where the exported public key text file will be written" \
+--file-selection \
+--filename="/home/pi/" \
+--directory \
+2>/dev/null); 
+
+# If the user cancels the prompt action then exit this script.
+if [ $? == 1 ]; then exit; fi
+
+clear;
+
+# Prompt user to specify the name for the exported public key text file.
+outputFileName=$(zenity \
+--entry \
+--title="Specify the name for the exported public key text file" \
+--entry-text="publickeyexport.txt" \
+--width 600 \
+2>/dev/null); 
+
+# If the user cancels the prompt action then exit this script.
+if [ $? == 1 ]; then exit; fi
+
+clear;
+
+# Prompt user for the email address or unique id of the public key.
+uniqueID=$(zenity \
+--entry \
+--title="Specify the email address or uniqueID of the public key" \
+--entry-text="UniqueID or Email Address" \
+--width 600 \
+2>/dev/null); 
+
+# If the user cancels the prompt action then exit this script.
+if [ $? == 1 ]; then exit; fi
+
+cd $outputDirectory;
+
+outputPathAndFileName=$outputDirectory/$outputFileName;
+
+gpg --export --armor $uniqueID > $outputPathAndFileName;
+
+clear;
+
+echo "Public key was exported to "$outputPathAndFileName

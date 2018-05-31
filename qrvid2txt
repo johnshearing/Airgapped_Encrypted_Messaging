@@ -1,0 +1,34 @@
+#/usr/bin/bash
+
+clear; 
+
+# Prompt user to select a video.MP4 file to convert back into text.
+inputVideo=$(zenity --title="Select a video.MP4 file of QR-Codes to be converted into text" --file-selection --filename="/home/pi/" 2>/dev/null); 
+
+# If the user cancels the prompt action then exit this script.
+if [ $? == 1 ]; then exit; fi
+
+clear;
+
+# Prompt user for the directory where the output text file will be written to.
+outputDirectory=$(zenity --title="Select the location where the outputed text file will be written" --file-selection --filename="/home/pi/" --directory 2>/dev/null); 
+
+# If the user cancels the prompt action then exit this script.
+if [ $? == 1 ]; then exit; fi
+
+clear;
+
+# Prompt user to specify the name of the output text file.
+OutputFileName=$(zenity --entry --title="Specify the name of the output text file" --entry-text="output.txt" --width 600 2>/dev/null); 
+
+# If the user cancels the prompt action then exit this script.
+if [ $? == 1 ]; then exit; fi
+
+clear;
+
+cd $outputDirectory;
+
+outputPathAndFileName=$outputDirectory/$OutputFileName;
+
+python /usr/local/bin/QRCodeVideoToTextFile.py $inputVideo $outputPathAndFileName;
+

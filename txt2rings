@@ -18,7 +18,9 @@ clear;
 
 gpg --import $fileToImport;
 
-clear;
-
 echo "Run list-keys from the menu to check that a public key has been imported.";
 echo "Run list-secret-keys from the menu to check that a private key has been imported.";
+
+echo "Press the ENTER key to continue";
+
+read;

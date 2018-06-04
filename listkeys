@@ -6,7 +6,7 @@ clear;
 emailAddress=$(zenity \
 --entry \
 --title="Specify the email address associated with the public key" \
---entry-text="Enter an email address or leave blank to show all fingerprints" \
+--entry-text="Enter an email address or leave blank to show all public keys" \
 --width 700 \
 2>/dev/null); 
 
@@ -15,10 +15,8 @@ if [ $? == 1 ]; then exit; fi
 
 clear;
 
-gpg --fingerprint $emailAddress; 
+gpg --list-keys $emailAddress; 
 
 echo "Press the ENTER key to continue"
 
 read
-
-

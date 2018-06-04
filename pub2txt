@@ -50,3 +50,7 @@ gpg --export --armor $uniqueID > $outputPathAndFileName;
 clear;
 
 echo "Public key was exported to "$outputPathAndFileName
+
+echo "Press the ENTER key to continue";
+
+read;

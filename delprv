@@ -62,5 +62,6 @@ clear;
 
 gpg --delete-secret-keys $keyID 
 
+echo "Press the ENTER key to continue";
 
-
+read;

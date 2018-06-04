@@ -5,73 +5,83 @@
 
 # This is a simple GUI for gpg secure messaging between PrivateKeyVaults or other Linux airgapped devices.
 
+while true; 
+do
+
 clear;
 
 # Ask user to choose a task.
-task=$(zenity --list \
+choice=$(zenity --list \
 --title="PrivateKeyVault Secure Messaging Services" \
 --text="Select a task from the menu" \
 --width 1000 \
 --height 1000 \
---column "Task" --column "Description" \
-"mew" "Launch MyEtherWallet" \
-"strtfm" "Manage files" \
-"strtlfpd" "Read or write a message" \
-"ncrypt" "Encrypt a text file" \
-"qrflash" "Export a text file to screen as a parade of QR-Codes" \
-"recvid" "Import a QR_Coded video and extract the text" \
-"dcrypt" "Decrypt a text file" \
-"qrvid2txt" "Extract text from an MP4 video file containing QR-Codes" \
-"fingerprint" "Show fingerprint for public keys" \
-"list-keys" "Display info about public keys" \
-"list-secret-keys" "Display info about secret keys" \
-"txt2rings" "Import a public or private key from a text file" \
-"pub2txt" "Export a public key to a text file" \
-"priv2txt" "Export a private key to a text file" \
-"gen-key" "Generate a Public / Private key pair" \
-"delpub" "Delete a public key" \
-"delprv" "Delete a private key" \
+--hide-column=2 \
+--column "Num" --column "Task" --column "Description" \
+"1" "mew" "Launch MyEtherWallet" \
+"2" "strtfm" "Manage files" \
+"3" "strtlfpd" "Read or write a message" \
+"4" "ncrypt" "Encrypt a text file" \
+"5" "qrflash" "Export Text File: Send QR-Code parade to screen" \
+"6" "recvid" "Import Text File: Read QR_Coded video into camera and extract the text" \
+"7" "dcrypt" "Decrypt a text file" \
+"8" "qrvid2txt" "Extract text from an MP4 video file containing QR-Codes" \
+"9" "fingerprint" "Show fingerprints for public keys" \
+"10" "listkeys" "List public keys" \
+"11" "listsecretkeys" "List private keys" \
+"12" "txt2rings" "Import a public or private key from a text file" \
+"13" "pub2txt" "Export a public key to a text file" \
+"14" "priv2txt" "Export a private key to a text file" \
+"15" "genkey" "Generate a Public / Private key pair" \
+"16" "delpub" "Delete a public key" \
+"17" "delprv" "Delete a private key" \
+"18" "Exit" "Exit the menu" \
 2>/dev/null);
 
 # if user cancels, exit
-if [ $? == 1 ] || [ $task == ""]; then exit; fi
+if [ $? == 1 ] || [ $choice == 0]; then exit; fi
 
 clear;
 
+
 # Execute the chosen operation.
-if [[ $task = mew ]]; then
+if [[ $choice = 1 ]]; then
 mew
-elif [[ $task = strtfm ]]; then
+elif [[ $choice = 2 ]]; then
 strtfm
-elif [[ $task = strtlfpd ]]; then
+elif [[ $choice = 3 ]]; then
 strtlfpd
-elif [[ $task = ncrypt ]]; then
+elif [[ $choice = 4 ]]; then
 ncrypt 
-elif [[ $task = qrflash ]]; then
+elif [[ $choice = 5 ]]; then
 qrflash
-elif [[ $task = recvid ]]; then
+elif [[ $choice = 6 ]]; then
 recvid
-elif [[ $task = dcrypt ]]; then
+elif [[ $choice = 7 ]]; then
 dcrypt
-elif [[ $task = qrvid2txt ]]; then
+elif [[ $choice = 8 ]]; then
 qrvid2txt
-elif [[ $task = fingerprint ]]; then
+elif [[ $choice = 9 ]]; then
 fingerprint
-elif [[ $task = list-keys ]]; then
-gpg --list-keys
-elif [[ $task = list-secret-keys ]]; then
-gpg --list-secret-keys
-elif [[ $task = txt2rings ]]; then
+elif [[ $choice = 10 ]]; then
+listkeys
+elif [[ $choice = 11 ]]; then
+listsecretkeys
+elif [[ $choice = 12 ]]; then
 txt2rings
-elif [[ $task = pub2txt ]]; then
+elif [[ $choice = 13 ]]; then
 pub2txt
-elif [[ $task = priv2txt ]]; then
+elif [[ $choice = 14 ]]; then
 priv2txt
-elif [[ $task = "gen-key" ]]; then
-gpg --gen-key
-elif [[ $task = "delpub" ]]; then
+elif [[ $choice = 15 ]]; then
+genkey
+elif [[ $choice = 16 ]]; then
 delpub
-elif [[ $task = "delprv" ]]; then
+elif [[ $choice = 17 ]]; then
 delprv
+elif [[ $choice = 18 ]]; then
+exit
 fi
+
+done
 

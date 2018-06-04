@@ -27,7 +27,7 @@ zenity \
 --cancel-label "No" \
 2>/dev/null;
 
-# If the user cancels the prompt action then exit this script.
+# If the user presses yes.
 if [ $? == 0 ];
 then \
     sign="--sign"; 
@@ -37,9 +37,12 @@ fi;
 
 clear;
 
-gpg2 --armor --encrypt $sign $fileToEncrypt;
+gpg2 --armor --encrypt --sign $fileToEncrypt;
 
 clear;
 
 echo "Done. Check to see if your encrypted file has been created"
+echo "Press the ENTER key to continue"
+
+read
 

@@ -2,8 +2,12 @@
 
 # This script starts the file manager.
 
+clear;
+
 cd ~;
 
 pcmanfm;
 
-clear;
+echo "Press the ENTER key to continue"
+
+read

@@ -16,6 +16,6 @@ fileToOpen=$(zenity \
 
 clear;
 
-leafpad $fileToOpen;
+sudo leafpad $fileToOpen;
 
 clear;

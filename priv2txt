@@ -29,7 +29,7 @@ clear;
 zenity \
 --info \
 --title "Private Key Export" \
---text='KEEP YOUR BACK UP IN A SAFE PLACE' \
+--text='KEEP YOUR EXPORTED PRIVATE KEY IN A SECURE PLACE' \
 2>/dev/null;
 
 clear;
@@ -82,3 +82,6 @@ clear;
 echo "Private key was exported to "$outputPathAndFileName;
 echo "Keep the exported private key backup file in a secure location";
 echo "DO NOT SHOW YOUR PRIVATE KEY TO ANYONE";
+echo "Press the ENTER key to continue";
+
+read;

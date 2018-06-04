@@ -1,0 +1,11 @@
+#/usr/bin/bash
+
+# This script will generate a new public private key pair.
+
+clear;
+
+gpg --gen-key;
+
+echo "Press the ENTER key to continue";
+
+read;

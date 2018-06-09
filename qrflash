@@ -26,8 +26,21 @@ timeToDisplay=$(zenity \
 if [ $? == 1 ]; then exit; fi
 
 clear;
+firstFrameFlag="yes";
 
-base64 $fileToParade | while read r; do echo $r | qrencode -t ANSIUTF8; sleep $timeToDisplay; done
+base64 $fileToParade | \
+while read r; 
+do \
+    echo $r | qrencode -t ANSIUTF8; 
+
+    if [[ $firstFrameFlag = "yes" ]];
+    then \
+        sleep 2; 
+        firstFrameFlag="no"; 
+    else \
+        sleep $timeToDisplay;
+    fi;
+done
 
 clear;
 

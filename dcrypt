@@ -20,7 +20,13 @@ if [ $? == 1 ]; then exit; fi
 
 clear;
 
+targetDirectory=$(dirname "${fileToDecrypt}");
+
+cd $targetDirectory;
+
 gpg $fileToDecrypt;
+
+cd -;
 
 echo "Done. Check to see if your encrypted file has been decrypted"
 echo "Press the ENTER key to continue"

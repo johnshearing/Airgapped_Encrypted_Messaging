@@ -19,23 +19,24 @@ choice=$(zenity --list \
 --hide-column=2 \
 --column "Num" --column "Task" --column "Description" \
 "1" "mew" "Launch MyEtherWallet" \
-"2" "strtfm" "Manage files" \
-"3" "strtlfpd" "Read or write a message" \
-"4" "ncrypt" "Encrypt a text file" \
-"5" "qrflash" "Export Text File: Send QR-Code parade to screen" \
-"6" "recvid" "Import Text File: Read QR_Coded video into camera and extract the text" \
-"7" "dcrypt" "Decrypt a text file" \
-"8" "qrvid2txt" "Extract text from an MP4 video file containing QR-Codes" \
-"9" "fingerprint" "Show fingerprints for public keys" \
-"10" "listkeys" "List public keys" \
-"11" "listsecretkeys" "List private keys" \
-"12" "txt2rings" "Import a public or private key from a text file" \
-"13" "pub2txt" "Export a public key to a text file" \
-"14" "priv2txt" "Export a private key to a text file" \
-"15" "genkey" "Generate a Public / Private key pair" \
-"16" "delpub" "Delete a public key" \
-"17" "delprv" "Delete a private key" \
-"18" "Exit" "Exit the menu" \
+"2" "strtterm" "Work at the command prompt" \
+"3" "strtfm" "Manage files" \
+"4" "strtlfpd" "Read or write a message" \
+"5" "ncrypt" "Encrypt a text file" \
+"6" "qrflash" "Export Text File: Send QR-Code parade to screen" \
+"7" "recvid" "Import Text File: Read QR_Coded video into camera and extract the text" \
+"8" "dcrypt" "Decrypt a text file" \
+"9" "qrvid2txt" "Extract text from an MP4 video file containing QR-Codes" \
+"10" "fingerprint" "Show fingerprints for public keys" \
+"11" "listkeys" "List public keys" \
+"12" "listsecretkeys" "List private keys" \
+"13" "txt2rings" "Import a public or private key from a text file" \
+"14" "pub2txt" "Export a public key to a text file" \
+"15" "priv2txt" "Export a private key to a text file" \
+"16" "genkey" "Generate a Public / Private key pair" \
+"17" "delpub" "Delete a public key" \
+"18" "delprv" "Delete a private key" \
+"19" "Exit" "Exit the menu" \
 2>/dev/null);
 
 # if user cancels, exit
@@ -48,38 +49,40 @@ clear;
 if [[ $choice = 1 ]]; then
 mew
 elif [[ $choice = 2 ]]; then
-strtfm
+strtterm
 elif [[ $choice = 3 ]]; then
-strtlfpd
+strtfm
 elif [[ $choice = 4 ]]; then
-ncrypt 
+strtlfpd
 elif [[ $choice = 5 ]]; then
-qrflash
+ncrypt 
 elif [[ $choice = 6 ]]; then
-recvid
+qrflash
 elif [[ $choice = 7 ]]; then
-dcrypt
+recvid
 elif [[ $choice = 8 ]]; then
-qrvid2txt
+dcrypt
 elif [[ $choice = 9 ]]; then
-fingerprint
+qrvid2txt
 elif [[ $choice = 10 ]]; then
-listkeys
+fingerprint
 elif [[ $choice = 11 ]]; then
-listsecretkeys
+listkeys
 elif [[ $choice = 12 ]]; then
-txt2rings
+listsecretkeys
 elif [[ $choice = 13 ]]; then
-pub2txt
+txt2rings
 elif [[ $choice = 14 ]]; then
-priv2txt
+pub2txt
 elif [[ $choice = 15 ]]; then
-genkey
+priv2txt
 elif [[ $choice = 16 ]]; then
-delpub
+genkey
 elif [[ $choice = 17 ]]; then
-delprv
+delpub
 elif [[ $choice = 18 ]]; then
+delprv
+elif [[ $choice = 19 ]]; then
 exit
 fi
 

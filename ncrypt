@@ -37,7 +37,7 @@ fi;
 
 clear;
 
-gpg2 --armor --encrypt --sign $fileToEncrypt;
+gpg2 --armor --encrypt $sign $fileToEncrypt;
 
 clear;
 

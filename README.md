@@ -1,8 +1,11 @@
-<h1>This is the PrivateKeyVault Application Launcher and Encrypted Messageing services</h1>
+<h1>PrivateKeyVault Application Launcher and Encrypted Messaging Services</h1>
 
-<h2>* Access Airgapped GPG Encrypted Messaging using QR-Coded Video  
-* Access Blockchain Services and More
-* Start any application available on the raspberry pi</h2>
+<h2>  
+* Access GPG encrypting operations  
+* Pass GPG encrypted file across airgap using QR-Coded Video  
+* Access Blockchain Services   
+* Start any application available on the raspberry pi  
+</h2>  
 
 Text files are encrypted and then passed across the airgap as a parade of QR-Codes displayed on the touch screen.  
 Should work with any kind of file but to date have only tested with text files.  

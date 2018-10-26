@@ -1,9 +1,5 @@
-## Airgapped GPG Encrypted Messaging using QR-Coded Video 
-This help file is not complete.  
-It is under construction.  
-
-Works on Raspberry Pi and other linux devices.  
-
+## This is the PrivateKeyVault software application.
+## Airgapped GPG Encrypted Messaging using QR-Coded Video  
 Text files are encrypted and then passed across the airgap as a parade of QR-Codes displayed on the touch screen.  
 Should work with any kind of file but to date have only tested with text files.  
 

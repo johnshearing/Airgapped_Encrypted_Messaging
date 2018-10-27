@@ -1,6 +1,6 @@
 ### PrivateKeyVault Application Launcher and Encrypted Messaging Services  
 Access GPG encrypting operations  
-Pass GPG encrypted file across airgap using QR-Coded Video  
+Pass GPG encrypted files across airgap using QR-Coded Video  
 Access Blockchain Services   
 Start any application available on the raspberry pi  
 

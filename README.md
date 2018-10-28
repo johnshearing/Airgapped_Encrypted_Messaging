@@ -8,9 +8,9 @@ Requires a raspberry pi setup as a PrivateKeyVault.
 [We show you how to make your own PrivateKeyVault here](https://github.com/johnshearing/PrivateKeyVault)  
 
 To use this code:  
-Clone or copy the repository onto your machine  
-Then copy all the files into a directory which is included in your path variable.  
+Clone or copy the repository onto your PrivateKeyVault into a directory which is included in your path variable.  
 Then grant executible permissions to all the files.  
 Finally open a terminal window and type `menu`.  
+You will see a menu of all the things you can do with the PrivateKeyVault
 
 

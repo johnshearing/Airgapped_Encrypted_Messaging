@@ -130,7 +130,7 @@ clear;
 preview=$(zenity \
 --entry \
 --title="Specify the position and size of the preview window x,y,w,h" \
---entry-text="100,100,120,100" \
+--entry-text="100,100,240,200" \
 --width 600 \
 2>/dev/null); 
 

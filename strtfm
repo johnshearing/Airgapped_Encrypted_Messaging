@@ -6,7 +6,7 @@ clear;
 
 cd ~;
 
-pcmanfm;
+sudo pcmanfm;
 
 echo "Press the ENTER key to continue"
 

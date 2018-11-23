@@ -26,6 +26,21 @@ timeToDisplay=$(zenity \
 if [ $? == 1 ]; then exit; fi
 
 clear;
+
+# display a Start Parade button
+zenity \
+--question \
+--title "Start QR-Code Parade?" \
+--text "Would you like to start the QR-Code parade?" \
+--ok-label "Start the Parade" \
+--cancel-label "Cancel" \
+2>/dev/null ; 
+
+# If the user presses the cancel button.
+if [ $? == 1 ]; then exit; fi
+
+clear;
+
 firstFrameFlag="yes";
 
 base64 $fileToParade | \

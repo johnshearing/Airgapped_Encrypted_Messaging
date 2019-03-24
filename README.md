@@ -3,8 +3,7 @@ Access GPG encrypting operations
 Pass GPG encrypted files across airgap using QR-Coded Video  
 Access Blockchain Services   
 Start any application available on the raspberry pi   
-[This video](https://youtu.be/qUWWuHium30) shows how to use this software on the PrivateKeyVault.  
-
+[This video shows how to use the encrypted messaging software on the PrivateKeyVault](https://youtu.be/qUWWuHium30)  
 Requires a raspberry pi setup as a PrivateKeyVault.  
 [We show you how to make your own PrivateKeyVault here](https://github.com/johnshearing/PrivateKeyVault)  
 
